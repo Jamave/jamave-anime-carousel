@@ -1,3 +1,7 @@
+/*Jamave carousel info.
+  Created by: Jamave Themes
+  Developer name: Abhishsek Sawan
+*/
 class jamave_anime_carousel {
   constructor(obj) {
     this.prime_obj = obj.ele_id || '';
@@ -10,22 +14,18 @@ class jamave_anime_carousel {
     this.font_color = obj.font_color || '#fff';
     this.font_family = obj.font_family || '';
     this.tl_text_bg = obj.tl_text_bg || '#4847ad';
-    
-    //Main content
     this.carousel_prime = document.querySelector(`#${this.prime_obj}`);
     this.carousel_image = this.carousel_prime.getElementsByClassName('carousel_image');
     this.carousel_text = this.carousel_prime.getElementsByClassName('carousel_text');
     this.carousel_top_left_text = this.carousel_prime.getElementsByClassName('carousel_top_left_text');
     this.carousel_top_right_img = this.carousel_prime.getElementsByClassName('carousel_top_right_img');
     this.carousel_content = this.carousel_prime.getElementsByClassName('carousel_content');
-    
     Object.assign(this.carousel_prime.style, {
         width:'100%',
         height: '100%',
         overflow:'hidden',
         position:'relative'
-    })
-    
+    });
     this.carousel_image.forEach((item, index) => {
       Object.assign(this.carousel_image[index].querySelector('img').style, {
         width:'100%',
@@ -38,12 +38,9 @@ class jamave_anime_carousel {
         position:'absolute'
       });
     });
-    
-    //Gradient overlay
     this.carousel_content.forEach((item, index) => {
       this.carousel_content[index].innerHTML+="<div class='carousel_bg_gradient'></div>";
     })
-    
     Object.assign(this.carousel_prime.querySelector('.carousel_bg_gradient').style, {
         width: '100%',
         height: '100%',
@@ -52,8 +49,6 @@ class jamave_anime_carousel {
         'background-image': `linear-gradient(${this.grad_top_color} 35%, ${this.grad_bottom_color})`,
         'z-index':'-1'
     });
-    
-    //this.carousel_text styles
       this.carousel_text.forEach((item, index) => {
         Object.assign(this.carousel_text[index].style, {
           position: 'absolute',
@@ -66,12 +61,8 @@ class jamave_anime_carousel {
       });
     
     if(this.side_rods) {
-      //Side rod animation
       this.carousel_prime.innerHTML += "<div class='carousel_side_rod carousel_left_rod'></div><div class='carousel_side_rod carousel_right_rod'></div>";
-      
-    //Carousel Side rods
     this.carousel_side_rod = this.carousel_prime.getElementsByClassName('carousel_side_rod');
-    
     this.carousel_side_rod.forEach((item, index) => {
       Object.assign(this.carousel_side_rod[index].style, {
         width: '12px',
@@ -79,8 +70,6 @@ class jamave_anime_carousel {
         position: 'absolute'
       });  
     });
-      
-      //Carousel right and left rods
       Object.assign(this.carousel_prime.querySelector('.carousel_left_rod').style, {
         left: 0,
         top: 0,
@@ -88,7 +77,6 @@ class jamave_anime_carousel {
         animation:'carousel_left_rod_animation 15s linear infinite',
         'animation-direction':'alternate'
       });
-      
       Object.assign(this.carousel_prime.querySelector('.carousel_right_rod').style, {
         right: 0,
         bottom: 0,
@@ -97,8 +85,6 @@ class jamave_anime_carousel {
         'animation-direction':'alternate'
       });
     }
-    
-    //Carousel top left text box
     this.carousel_top_left_text.forEach((item, index) => {
       Object.assign(this.carousel_top_left_text[index].style, {
         width:'80px',
@@ -115,8 +101,6 @@ class jamave_anime_carousel {
         'font-weight':'bold',
       })
     })
-    
-    //Carousel right Image
     this.carousel_top_right_img.forEach((item, index) => {
       Object.assign(this.carousel_top_right_img[index].style, {
         right:10,
@@ -125,22 +109,17 @@ class jamave_anime_carousel {
         width:'80px'
       });
     });
-    
-    //Integerating things togather with loops
     this.carousel_image.forEach((item, index) => {
       if(index==0){
         this.carousel_top_left_text[index].style.animation = 'top_left_animation 1s';
         this.carousel_image[index].querySelector('img').style.animation = `carousel_animation ${this.img_time}s`;
         this.carousel_text[index].style.animation = 'carousel_text_animation 1.5s';
-        
       } else {
         this.carousel_top_left_text[index].style.display = 'none';
       this.carousel_image[index].querySelector('img').style.display = 'none';
       this.carousel_text[index].style.display = 'none';
       }
     });
-    
-    
     if(this.carousel_image.length > 1) {
       let i = 1;
       let initiate = true;
@@ -166,18 +145,13 @@ class jamave_anime_carousel {
         this.carousel_image[i].querySelector('img').style.animation = `carousel_animation ${this.img_time}s`;
         
         this.carousel_text[i].style.animation = 'carousel_text_animation 1.5s';
-        
-        
         if(i<this.carousel_image.length-1){
           i+=1;
         } else if(!initiate && i==this.carousel_image.length-1){
           i=0;
         }
-        
       }, this.img_time*1000);
     }
-      
-    //Creating css animation for images
     this.carousel_animation = document.createElement('style');
     this.carousel_animation.type = 'text/css';
     this.carousel_animation_rules = document.createTextNode('@-webkit-keyframes carousel_animation {'+
@@ -188,9 +162,6 @@ class jamave_anime_carousel {
     '}');
     this.carousel_animation.appendChild(this.carousel_animation_rules);
     document.getElementsByTagName("head")[0].appendChild(this.carousel_animation);
-    
-    
-    //Creating css animation for text
     this.carousel_text_animation = document.createElement('style');
     this.carousel_text_animation.type = 'text/css';
     this.carousel_text_animation_rules = document.createTextNode('@-webkit-keyframes carousel_text_animation {'+
@@ -199,9 +170,7 @@ class jamave_anime_carousel {
     '}');
     this.carousel_text_animation.appendChild(this.carousel_text_animation_rules);
     document.getElementsByTagName("head")[0].appendChild(this.carousel_text_animation);
-    
     if(this.side_rods){
-      //Creating css animation for left rod
       this.carousel_left_rod_animation = document.createElement('style');
       this.carousel_left_rod_animation.type = 'text/css';
       this.carousel_left_rod_animation_rules = document.createTextNode('@-webkit-keyframes carousel_left_rod_animation {'+
@@ -210,8 +179,6 @@ class jamave_anime_carousel {
       '}');
       this.carousel_left_rod_animation.appendChild(this.carousel_left_rod_animation_rules);
       document.getElementsByTagName("head")[0].appendChild(this.carousel_left_rod_animation);
-      
-      //Right rod animation
       this.carousel_right_rod_animation = document.createElement('style');
       this.carousel_right_rod_animation.type = 'text/css';
       this.carousel_right_rod_animation_rules = document.createTextNode('@-webkit-keyframes carousel_right_rod_animation {'+
@@ -221,8 +188,6 @@ class jamave_anime_carousel {
       this.carousel_right_rod_animation.appendChild(this.carousel_right_rod_animation_rules);
       document.getElementsByTagName("head")[0].appendChild(this.carousel_right_rod_animation);
     }
-    
-    //Top left text animation
     this.top_left_animation = document.createElement('style');
     this.top_left_animation.type = 'text/css';
     this.top_left_animation_rules = document.createTextNode('@-webkit-keyframes top_left_animation {'+
@@ -231,7 +196,5 @@ class jamave_anime_carousel {
     '}');
     this.top_left_animation.appendChild(this.top_left_animation_rules);
     document.getElementsByTagName("head")[0].appendChild(this.top_left_animation);
-    
-    
       }
 }
