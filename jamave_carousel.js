@@ -14,6 +14,7 @@ class jamave_anime_carousel {
     this.font_color = obj.font_color || '#fff';
     this.font_family = obj.font_family || '';
     this.tl_text_bg = obj.tl_text_bg || '#4847ad';
+    this.img_style = obj.img_style || 'cover';
     this.carousel_prime = document.querySelector(`#${this.prime_obj}`);
     this.carousel_image = this.carousel_prime.getElementsByClassName('carousel_image');
     this.carousel_text = this.carousel_prime.getElementsByClassName('carousel_text');
@@ -31,6 +32,7 @@ class jamave_anime_carousel {
         width:'100%',
         height:'100%',
         overflow:'hidden',
+        'object-fit': `${this.img_style}`,
         'background-repeat':'no-repeat',
         'background-size':'contain',
         'background-position':'center',
