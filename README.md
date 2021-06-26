@@ -1,37 +1,29 @@
-## Welcome to GitHub Pages
+## Welcome to the Jamave Anime Carousel
 
-You can use the [editor on GitHub](https://github.com/Jamave/jamave-anime-carousel/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Code- **Java Script**
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Usage: Paramaeters-
 
-### Markdown
+- **ele_id:** `'ID of your slider'` (_required_)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- **side_rods:** `true` 'or' `false` (_default: `false`_)
 
-```markdown
-Syntax highlighted code block
+- **left_rod_color:** 'color of your choice' (_default: `#FFE500`_)
 
-# Header 1
-## Header 2
-### Header 3
+- **right_rod_color:** 'color of your choice' (_default: `#4847ad`_)
 
-- Bulleted
-- List
+- **img_transition_time:** 'in seconds' (_default: `5`_)
 
-1. Numbered
-2. List
+- **grad_top_color:** 'color of your choice' (_default: `rgb(251,255,0,0.148)`_)
 
-**Bold** and _Italic_ and `Code` text
+- **grad_bottom_color:** 'color of your choice' (_default: `rgb(72,71,173, 0.9)`_)
 
-[Link](url) and ![Image](src)
-```
+- **font_color:** 'color of your choice' (_default: `#fff`_)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+- **font_family:** (_default: `none`_)
 
-### Jekyll Themes
+- **tl_text_bg:** (_default: `#4847ad`_)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Jamave/jamave-anime-carousel/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+**More**
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+For a detailed information about this carouse visit the [Wiki Page](https://github.com/slowwind1/jamave_anime_carousel/wiki).
