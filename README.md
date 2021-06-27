@@ -24,7 +24,7 @@ Code- **Java Script**
 
 - **tl_text_bg:** (_default: `#4847ad`_)
 
--**img_style:** [css object-fit property](https://www.w3schools.com/css/css3_object-fit.asp) (_default: `cover`_)
+- **img_style:** [css object-fit property](https://www.w3schools.com/css/css3_object-fit.asp) (_default: `cover`_)
 
 **More**
 
