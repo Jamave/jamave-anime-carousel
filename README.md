@@ -2,6 +2,8 @@
 
 Code- **Java Script**
 
+`var carousel = new jamave_anime_carousel({.._Parameters_..});`
+
 ### Usage: Paramaeters-
 
 - **ele_id:** `'ID of your slider'` (_required_)
