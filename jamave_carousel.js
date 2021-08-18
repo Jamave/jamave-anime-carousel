@@ -1,5 +1,4 @@
 /*Jamave carousel info.
-  Created by: Jamave Themes
   Developer name: Abhishsek Sawan
 */
 class jamave_anime_carousel {
